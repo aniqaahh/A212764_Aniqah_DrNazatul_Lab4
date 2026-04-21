@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.a212764_aniqah_drnazatul_lab3"
+    namespace = "com.example.a212764_aniqah_drnazatul_lab4"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.a212764_aniqah_drnazatul_lab2"
+        applicationId = "com.example.a212764_aniqah_drnazatul_lab4"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -48,6 +48,9 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation("androidx.navigation:navigation-compose:2.8.5")//new
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")//new
+    implementation("androidx.compose.material:material-icons-extended:1.6.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
