@@ -158,8 +158,7 @@ fun ChipItem(text: String, iconRes: Int) {
 fun TrailFullCard(trail: Trail, navController: NavController, viewModel: TrailViewModel) {
     var expanded by remember { mutableStateOf(false) }
 
-    // Guna ni terus, tak payah remember lagi
-    val isSaved by trail.isSaved
+    val isSaved by trail.isSaved //untuk button saved
 
     ElevatedCard(
         modifier = Modifier
@@ -173,7 +172,7 @@ fun TrailFullCard(trail: Trail, navController: NavController, viewModel: TrailVi
         Column {
             Box {
                 Image(
-                    painter = painterResource(id = trail.imageRes), // Guna trail.imageRes
+                    painter = painterResource(id = trail.imageRes), 
                     contentDescription = null,
                     modifier = Modifier.height(180.dp).fillMaxWidth(),
                     contentScale = ContentScale.Crop
@@ -280,8 +279,7 @@ fun BottomNavBar(navController: NavController) {
         "Profile" to Icons.Default.Person
     )
 
-    // 2. Mapping: Sini kunci dia. Hanya route yang ada dalam NavHost akan berfungsi
-    // Kalau belum buat screen "saved", "map", "activity", buat sementara letak "home"
+    // map kat sini
     val routes = listOf("home", "saved", "map", "activity", "profile")
 
     NavigationBar(
@@ -292,7 +290,7 @@ fun BottomNavBar(navController: NavController) {
             val route = routes[index]
 
             NavigationBarItem(
-                // 3. Highlight icon berdasarkan route sebenar, bukan index
+                // 3. Highlight icon berdasarkan real route 
                 selected = currentRoute == route,
                 onClick = {
                     // Hanya navigate kalau route tu wujud
@@ -329,14 +327,3 @@ fun BottomNavBar(navController: NavController) {
         }
     }
 }
-
-//@Preview(showBackground = true)
-//@Composable
-//fun HomePreview() {
-//    A212764_Aniqah_DrNazatul_Lab4Theme {
-//        // Preview perlukan mock setup supaya tak crash
-//        val dummyVm = TrailViewModel()
-//        val dummyNav = rememberNavController()
-//        HomeScreen(dummyNav, dummyVm)
-//    }
-//}
